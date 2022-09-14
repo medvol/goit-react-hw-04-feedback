@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Panel } from "./Section/Section";
 import { FeedbackOptions } from "./FeedbackOptions/FeedbackOptions";
 import { Statistics } from "./Statistics/Statistics";
-import { FeedbackWrapper } from "./App.styled";
+import { Box } from "./Box";
 
 export class App extends Component {
  state = {
@@ -31,20 +31,21 @@ export class App extends Component {
     const total = this.countTotalFeedback()
     const positivePercentage = this.countPositiveFeedbackPercentage(total)
     return (
-      <FeedbackWrapper>
+      <Box width="30%" mt={3} mb={3} ml={6}
+        p={ 4} bg='white' borderRadius='normal'
+        boxShadow='card'>
           <Panel title="Please leave feedback">
-        <FeedbackOptions options={this.state} onLeaveFeedback={ this.onLeaveFeedback}/>
-      </Panel>
-      <Panel title="Statistics">
-          <Statistics good={this.state.good} 
-          neutral={this.state.neutral}
-           bad={this.state.bad} 
-           total={total} 
-           positivePercentage={`${positivePercentage}%`}>
-
-           </Statistics>
-      </Panel>
-      </FeedbackWrapper>
+             <FeedbackOptions options={this.state} onLeaveFeedback={ this.onLeaveFeedback}/>
+          </Panel>
+          <Panel title="Statistics">
+              <Statistics good={this.state.good} 
+                  neutral={this.state.neutral}
+                  bad={this.state.bad} 
+                  total={total} 
+                  positivePercentage={`${positivePercentage}%`}>
+              </Statistics>
+          </Panel>
+      </Box>
     
     )
   }

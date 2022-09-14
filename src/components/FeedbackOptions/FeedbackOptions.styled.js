@@ -1,12 +1,5 @@
 import styled from "styled-components";
 
-export const FeedbackList = styled.ul`
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: ${p => p.theme.space[3]}px;   
-`
-
 export const FeedbackButton = styled.button`
     min-width: ${p => p.theme.space[6]}px;
     font-size: ${p => p.theme.fontSizes.s};    
@@ -17,6 +10,11 @@ export const FeedbackButton = styled.button`
     :hover {
         color:${p => p.theme.colors.white};
         background-color: ${p => p.theme.colors.accent};
-    }
+    }   
+`
 
+export const FeedbackOptionsItem = styled.li`
+    :not(:last-child){
+            margin-right: ${p => p.theme.space[3]}px;
+        }
 `
