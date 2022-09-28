@@ -8,7 +8,7 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
             {Object.keys(options)
                 .map(key => (
                     <FeedbackOptionsItem key = {key}>
-                        <FeedbackButton type="button" onClick={onLeaveFeedback}>{key}</FeedbackButton>
+                        <FeedbackButton type="button" onClick={onLeaveFeedback} data-name={key}>{key}</FeedbackButton>
                     </FeedbackOptionsItem>))}
         </Box>
     )
